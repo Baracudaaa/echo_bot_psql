@@ -54,7 +54,7 @@ async def main():
                             user_id BIGINT REFERENCES users(user_id),
                             created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
                             activity_date DATE NOT NULL DEFAULT CURRENT_DATE,
-                            actions INT NOT NULL DEFAULT_1
+                            actions INT NOT NULL DEFAULT 1
                             );
                             CREATE UNIQUE INDEX IF NOT EXISTS idx_activity_user_day
                             ON activity (user_id, activity_date);
