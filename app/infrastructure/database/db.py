@@ -85,7 +85,9 @@ async def change_user_alive_status(
     async with conn.cursor() as cursor:
         data = await cursor.execute(
             query="""
-                 SELECT is_alive FROM users WHERE user_id = %s;
+                 SELECT is_alive 
+                 FROM users 
+                 WHERE user_id = %s;
                 """,
             params=(user_id,),
         )
@@ -104,7 +106,9 @@ async def get_user_banned_status_by_id(
     async with conn.cursor() as cursor:
         data = await cursor.execute(
             query="""
-                SELECT banned FROM users WHERE user_id = %s;
+                SELECT banned 
+                FROM users 
+                WHERE user_id = %s;
             """,
             params=(user_id,),
         )
@@ -124,7 +128,9 @@ async def get_user_banned_status_by_username(
     async with conn.cursor() as cursor:
         data = await cursor.execute(
             query="""
-                SELECT banned FROM users WHERE username = %s;
+                SELECT banned 
+                FROM users 
+                WHERE username = %s;
             """,
             params=(username,),
         )
@@ -144,7 +150,9 @@ async def get_user_role(
     async with conn.cursor() as cursor:
         data = await cursor.execute(
             query="""
-                SELECT role FROM users WHERE user_id = %s;
+                SELECT role 
+                FROM users 
+                WHERE user_id = %s;
             """,
             params=(user_id,),
         )
